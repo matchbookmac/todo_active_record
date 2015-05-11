@@ -5,10 +5,9 @@ also_reload('lib/**/*.rb')
 require('./lib/list')
 require('./lib/task')
 require('pg')
+require('pry')
 
 get('/') do
-  task = Task.create({description: "hello there", done: false})
-  task2 = Task.create({description: "hiya back", done: false})
   @tasks = Task.all()
   erb(:index)
 end
